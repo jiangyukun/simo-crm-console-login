@@ -3,11 +3,11 @@ const webpack = require('webpack')
 const handleModulePath = require('./tools/handleModulePath')
 
 const ipAddress = 'localhost'
-const port = 3021
+const port = 3020
 
 module.exports = {
   entry: [
-    './src/main.tsx'
+    './src/index.tsx'
   ],
   devServer: {
     hot: true,

@@ -10,6 +10,7 @@ import md5 from '../../core/utils/md5'
 import {LOGIN} from './types'
 import {login} from './login.action'
 import {clearState} from '../../action/app.action'
+import {context} from '../../core/env'
 
 class Login extends Component<any> {
   seed: number
@@ -33,7 +34,7 @@ class Login extends Component<any> {
       this.props.clearState(LOGIN)
     }
     if (this.props.loginSuccess) {
-      location.href = 'prod/index'
+      location.href = `${context}/prod/index`
     }
   }
 

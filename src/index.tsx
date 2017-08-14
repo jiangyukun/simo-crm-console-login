@@ -16,8 +16,8 @@ import allReducers from './containers/login/login.reducer'
 const store = createStore<any>(allReducers, {}, applyMiddleware(request_3_phase))
 
 if (module.hot) {
-  module.hot.accept('./reducers/', () => {
-    const nextRootReducer = require('./reducers/').default
+  module.hot.accept('./containers/login/login.reducer', () => {
+    const nextRootReducer = require('./containers/login/login.reducer').default
     store.replaceReducer(nextRootReducer)
   })
 }
