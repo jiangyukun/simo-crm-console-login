@@ -34,7 +34,11 @@ class Login extends Component<any> {
       this.props.clearState(LOGIN)
     }
     if (this.props.loginSuccess) {
-      location.href = `${context}/prod/index`
+      if (location.href.indexOf('inline') != -1) {
+        location.href = `${context}/inline/index`
+      } else {
+        location.href = `${context}/prod/index`
+      }
     }
   }
 

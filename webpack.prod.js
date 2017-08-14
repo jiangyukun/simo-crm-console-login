@@ -6,19 +6,20 @@ const webpack = require('webpack')
 const moment = require('moment')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+let context = '/simo-crm'
+
 const handleModulePath = require('./tools/handleModulePath')
 
 process.env.NODE_ENV = 'production'
 
 module.exports = {
   entry: [
-    './src/main.tsx'
+    './src/index.tsx'
   ],
   output: {
     path: __dirname + '/build/prod/',
     filename: 'bundle' + '.min.js',
-    publicPath: '/crm/build/prod/',
-    chunkFilename: '[name].chunk.js?v=' + moment().format('YYYY-MM-DD')
+    publicPath: `${context}/login/build/prod/`
   },
   resolve: {
     extensions: ['.js', 'jsx', '.ts', '.tsx']
