@@ -78,7 +78,7 @@ class Login extends Component<any> {
                       />
                     </div>
                     <div className="submit">
-                      <button onClick={this.handleSubmit}>登 录</button>
+                      <button disabled={!this.state.username || !this.state.password} onClick={this.handleSubmit}>登 录</button>
                     </div>
                   </form>
                 </div>
